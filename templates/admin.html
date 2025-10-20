@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Admin</title>
+</head>
+<body>
+
+    <div class="section">
+        <h1>ADMIN DASHBOARD</h1>
+        <div class="section-title">REGISTERED CLIENTS</div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>SURNAME</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+            </tr>
+            {% for s in signups %}
+            <tr>
+                <th>{{s[0]}}</th>
+                <th>{{s[1]}}</th>
+                <th>{{s[2]}}</th>
+                <th>{{s[3]}}</th>
+                <th>{{s[4]}}</th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">MESSAGE CLIENTS</div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>SURNAME</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+                <th>MESSAGE</th>
+            </tr>
+            {% for s in contacts %}
+            <tr>
+                <th>{{s[0]}}</th>
+                <th>{{s[1]}}</th>
+                <th>{{s[2]}}</th>
+                <th>{{s[3]}}</th>
+                <th>{{s[4]}}</th>
+                <th>{{s[5]}}</th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+    <p><a class="logout" href="{{ url_for('admin_logout')}}">LOG OUT</a></p>
+    
+</body>
+</html>

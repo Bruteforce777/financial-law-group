@@ -1,0 +1,252 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #f8f9fc;
+    color: #222;
+}
+
+.hero{
+    background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80')
+    center center / cover no-repeat;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero .overlay{
+    background: rgb(0,30, 60, 0.7);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.hero p{
+    font-size: 1.1rem;
+}
+
+.hero h1{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #f9c74f;
+}
+
+.hero p{
+    font-size: 1.1rem;
+}
+
+.forms-section{
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-self: center;
+}
+
+.form-box{
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+    width: 320px;
+    transition: transform 0.3s;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+.form-box:hover{
+    transform: translateY(-5px);
+}
+
+.form-box h2{
+    color: #002b5c;
+    margin-bottom: 10px;
+}
+
+.form-box p{
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.hero-success{
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+    transition: transform 0.3s;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-success:hover{
+    transform: translateY(-10px);
+}
+
+.hero-success h2{
+    color: #002b5c;
+    margin-bottom: 10px;
+}
+
+.hero-success p{
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hero-success a{
+    text-decoration: underline;
+    font-weight: 600;
+    color: #f9c74f;
+    text-align: center;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+
+button{
+    background-color: #002b5c;
+    color: #f9c74f;
+    font-weight: 600;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover{
+    background-color: #013974;
+}
+
+footer{
+    text-align: center;
+    padding: 1rem;
+    background-color: #002b5c;
+    color: #f9c74f;
+    font-size: 0.9rem;
+}
+
+.login-box{
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.error{
+    text-align: center;
+    color: red;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th, th{
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th{
+    background-color: #2c3e50;
+    color: whitesmoke;
+}
+
+tr:hover{
+    background-color: #f1f1f1;
+}
+
+.section-title{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #34495e;
+    text-align: center;
+}
+
+.section h1{
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.logout{
+    text-decoration: underline;
+    color: #2c3e50;
+    font-weight: 600;
+    text-align: center;
+}
+
+.phone-group{
+    display: flex;
+    gap: 8px;
+}
+
+#country-code{
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#phone{
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+@media(max-width: 768px){
+    .hero{
+        height: 35vh;
+    }
+
+    .hero h1{
+        font-size: 2rem;
+    }
+
+    .form-box{
+        width: 90%;
+    }
+}
