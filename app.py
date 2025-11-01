@@ -11,7 +11,6 @@ app.secret_key = os.getenv("SECRET_KEY", "fallback_secret_key")
 
 app.config["SECRET_KEY"] = os.getenv('SECRET_KEY')
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
-print("connected to:", app.config['SQLALCHEMY_DATABASE_URI'])
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  
 
 db = SQLAlchemy(app)
@@ -93,7 +92,6 @@ def admin():
     
     signups = User.query.all()
     contacts = Contact.query.all()
-    print("User:", signups)
 
     return render_template("admin.html", signups=signups, contacts=contacts)
 
