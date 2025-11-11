@@ -212,9 +212,20 @@ tr:hover{
     background-color: #264653;
 }
 
+#countryCode{
+    width: 40%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #002b5c;
+    color: #f9c74f;
+    margin-bottom: 15px;
+}
 
-
-
+option{
+    border: 1px solid grey;
+}
 
 .section-title{
     margin-top: 30px;
@@ -238,24 +249,15 @@ tr:hover{
     text-align: center;
 }
 
-.phone-group{
+.phone-container{
     display: flex;
     gap: 8px;
+    align-items: center;
 }
 
-#country-code{
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
 
 #phone{
     flex: 1;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 
