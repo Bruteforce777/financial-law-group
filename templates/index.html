@@ -21,8 +21,32 @@
                 <p>Join Us Today And Start Your Recovery Process.</p>
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="text" name="surname" placeholder="Surname" required>
-                <input type="email" name="email" placeholder="Email" required>      
-                <input type="tel" id="signup-phone" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required> 
+                
+                <div class="phone-container">
+
+                    <select name="country_code" id="countryCode"required>
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+31">+31</option>
+                        <option value="+33">+33</option>
+                        <option value="+32">+32</option>
+                        <option value="+7">+7</option>
+                        <option value="+49">+49</option>
+                        <option value="+64">+64</option>
+                        <option value="+48">+48</option>
+                        <option value="+47">+47</option>
+                        <option value="+27">+27</option>
+                        <option value="+61">+61</option>
+                        <option value="+45">+45</option>
+                        <option value="+46">+46</option>
+                        <option value="+82">+82</option>
+                        
+                    </select>
+
+                    <input type="tel" id="signup-phone" name="phone" placeholder="Phone Number" required>     
+                </div>
+
                 <button type="submit">SIGN UP</button>
             </form>
 
@@ -31,8 +55,31 @@
                 <p>Send Us A Message.</p>
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="text" name="surname" placeholder="Surname" required>
-                <input type="email" name="email" placeholder="Email" required>      
-                <input type="tel" id="contact-phone" name="phone" placeholder="Phone Number" required>     
+                <input type="email" name="email" placeholder="Email" required>  
+                
+                <div class="phone-container">
+
+                    <select name="country_code" id="countryCode"required>
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+31">+31</option>
+                        <option value="+33">+33</option>
+                        <option value="+32">+32</option>
+                        <option value="+7">+7</option>
+                        <option value="+49">+49</option>
+                        <option value="+64">+64</option>
+                        <option value="+48">+48</option>
+                        <option value="+47">+47</option>
+                        <option value="+27">+27</option>
+                        <option value="+61">+61</option>
+                        <option value="+45">+45</option>
+                        <option value="+46">+46</option>
+                        <option value="+82">+82</option>          
+                    </select>
+
+                    <input type="tel" id="contact-phone" name="phone" placeholder="Phone Number" required>     
+                </div>
+
                 <textarea name="message" rows="10" placeholder="Your Message..." required></textarea>
                 <button type="submit">SEND MESSAGE</button>
             </form>
@@ -42,6 +89,24 @@
     <footer>
         <p>@2015 Financial Law Group | All Rights Reserved</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            fetch("https://ipapi.co/json/")
+            .then((res) => res.jason())
+            .then((data) => {
+                const userCountry = data.country_name;
+                const select = document.getElementById("countryCode");
+                for (let option of select.options) {
+                    if (option.text.tolowerCase().includes(userCountry.tolowerCase())) {
+                        select.value = option.value;
+                        break;
+                    }
+                }
+            })
+            .catch((err) => console.log("Country auto select failed:", err));
+        });
+    </script>
 
 </body>
 </html>
