@@ -39,8 +39,6 @@ class Contact(db.Model):
     message = db.Column(db.String(500),)
 
 
- 
-    
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -53,8 +51,11 @@ def signup():
         surname = request.form['surname']
         email = request.form['email']
         phonenumber = request.form['phone']
+        country_code = request.form["country_code"]
 
-        new_user = User(name=name,surname=surname,email=email,phonenumber=phonenumber)
+        formatted_phone = f"{country_code}{phonenumber}".replace(" ", " ").strip()
+
+        new_message = User(name=name,surname=surname,email=email,phonenumber=formatted_phone)
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('success'))
@@ -71,8 +72,11 @@ def contact():
         email = request.form['email']
         phonenumber = request.form['phone']
         message = request.form['message']
+        country_code = request.form["country_code"]
 
-        new_message = Contact(name=name,surname=surname,email=email,phonenumber=phonenumber,message=message)
+        formatted_phone = f"{country_code}{phonenumber}".replace(" ", " ").strip()
+
+        new_message = Contact(name=name,surname=surname,email=email,phonenumber=formatted_phone,message=message)
         db.session.add(new_message)
         db.session.commit()
         return redirect(url_for('success'))
